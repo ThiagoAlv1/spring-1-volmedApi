@@ -2,6 +2,7 @@ package br.com.volmed.volmed.controller;
 
 import br.com.volmed.volmed.medico.*;
 import jakarta.validation.Valid;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +26,7 @@ public class MedicoController {
 
     @GetMapping()
     public Page<DadosListagemMedico> listarMedicos(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        return repository.findAll(paginacao).map(DadosListagemMedico::new);
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
     }
 
     @PutMapping()
@@ -33,5 +34,12 @@ public class MedicoController {
     public void atualizarMedico(@RequestBody @Valid DadosAtualizacaoMedico dados) {
         var medico = repository.getReferenceById(dados.id());
         medico.atalizarInformacoes(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirMedico(@PathVariable Long id){
+        var medico = repository.getReferenceById(id);
+        medico.inativar();
     }
 }
