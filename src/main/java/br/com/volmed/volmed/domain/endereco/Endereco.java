@@ -1,4 +1,4 @@
-package br.com.volmed.volmed.endereco;
+package br.com.volmed.volmed.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

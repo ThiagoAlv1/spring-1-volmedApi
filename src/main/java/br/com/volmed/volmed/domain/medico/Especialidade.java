@@ -1,4 +1,4 @@
-package br.com.volmed.volmed.medico;
+package br.com.volmed.volmed.domain.medico;
 
 public enum Especialidade {
     ORTOPEDIA,

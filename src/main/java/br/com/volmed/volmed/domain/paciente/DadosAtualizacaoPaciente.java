@@ -1,6 +1,6 @@
-package br.com.volmed.volmed.paciente;
+package br.com.volmed.volmed.domain.paciente;
 
-import br.com.volmed.volmed.endereco.DadosEndereco;
+import br.com.volmed.volmed.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoPaciente(

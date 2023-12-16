@@ -1,7 +1,4 @@
-package br.com.volmed.volmed.paciente;
-
-import br.com.volmed.volmed.medico.Especialidade;
-import br.com.volmed.volmed.medico.Medico;
+package br.com.volmed.volmed.domain.paciente;
 
 public record DadosListagemPaciente(Long id, String nome, String email, String cpf) {
 
