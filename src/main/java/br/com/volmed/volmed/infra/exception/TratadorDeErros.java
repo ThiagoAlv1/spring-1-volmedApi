@@ -1,4 +1,4 @@
-package br.com.volmed.volmed.infra;
+package br.com.volmed.volmed.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
